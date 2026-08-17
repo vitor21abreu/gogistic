@@ -1,0 +1,17 @@
+import "github.com/seuusuario/logistica-go/calculation/fuel"
+
+func main() {
+    client := fuel.New()
+
+    price, err := client.GetPrice(
+        fuel.Gasoline,
+        "Salvador",
+        "BA",
+    )
+
+    if err != nil {
+        panic(err)
+    }
+
+    println(price)
+}
